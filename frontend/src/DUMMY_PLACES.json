@@ -5,7 +5,10 @@
     "description": "One of the most famous sky scrpaers in the world!",
     "image": "https://cdn.britannica.com/73/114973-050-2DC46083/Midtown-Manhattan-Empire-State-Building-New-York.jpg",
     "address": "20 W 34th St., New York, NY 10001",
-    "location": { "lat": 40.7484, "lng": -73.9857 },
+    "location": {
+      "lat": 40.7484,
+      "lng": -73.9857
+    },
     "creator": "u1"
   },
   {
@@ -14,7 +17,10 @@
     "description": "One of the most famous sky scrpaers in the world!",
     "image": "https://cdn.britannica.com/73/114973-050-2DC46083/Midtown-Manhattan-Empire-State-Building-New-York.jpg",
     "address": "20 W 34th St., New York, NY 10001",
-    "location": { "lat": 40.7484, "lng": -73.9857 },
+    "location": {
+      "lat": 40.7484,
+      "lng": -73.9857
+    },
     "creator": "u2"
   }
 ]

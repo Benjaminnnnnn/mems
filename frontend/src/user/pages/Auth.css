@@ -1,17 +1,24 @@
 .authentication__header {
-  color: white;
+  color: var(--text);
   text-align: center;
 }
 
 .authentication {
-  width: 90%;
-  max-width: 25rem;
-  margin: 7rem auto;
+  width: min(420px, 90%);
+  margin: 0 auto;
   text-align: center;
+  background: #0f172a;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
 }
 
 .authentication form {
   margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
 .login-form {
@@ -20,7 +27,8 @@
   padding: 1rem;
   width: 90%;
   max-width: 40rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  border-radius: 6px;
-  background: white;
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  background: #0f172a;
+  border: 1px solid var(--border);
 }

@@ -8,69 +8,79 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.nav-links li {
-  margin: 1rem;
+  gap: 0.35rem;
 }
 
 .nav-links a {
   border: 1px solid transparent;
-  color: #292929;
   text-decoration: none;
-  padding: 0.5rem;
+}
+
+.nav-links li {
+  width: 100%;
+  text-align: center;
+}
+
+.nav-links a,
+.nav-links button {
+  width: 100%;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.65rem 1rem;
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 120ms ease, box-shadow 180ms ease,
+    background 180ms ease, border-color 180ms ease;
 }
 
 .nav-links a:hover,
 .nav-links a:active,
+.nav-links button:hover,
+.nav-links button:active {
+  transform: translateY(-1px);
+  border-color: var(--border);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+}
+
 .nav-links a.active {
-  background: #f8df00;
-  border-color: #292929;
-  color: #292929;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #0b1220;
+  border-color: transparent;
+  box-shadow: 0 12px 35px rgba(139, 92, 246, 0.35);
+}
+
+.nav-links a:focus-visible,
+.nav-links button:focus-visible {
+  outline: 3px solid rgba(139, 92, 246, 0.35);
+  outline-offset: 3px;
 }
 
 .nav-links button {
-  cursor: pointer;
-  border: 1px solid #292929;
-  color: #292929;
-  background: transparent;
-  padding: 0.5rem;
-  font: inherit;
-}
-
-.nav-links button:focus {
-  outline: none;
-}
-
-.nav-links button:hover,
-.nav-links button:active {
-  background: #292929;
-  color: white;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
 }
 
 @media (min-width: 768px) {
   .nav-links {
     flex-direction: row;
+    height: auto;
   }
 
   .nav-links li {
-    margin: 0 0.5rem;
+    width: auto;
   }
 
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-  }
-
+  .nav-links a,
   .nav-links button {
-    border: 1px solid white;
-    color: white;
-    background: transparent;
-  }
-
-  .nav-links button:hover,
-  .nav-links button:active {
-    background: #f8df00;
-    color: #292929;
+    width: auto;
   }
 }

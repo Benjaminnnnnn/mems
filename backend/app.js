@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 const HttpError = require("./models/http-error");
 const placesRoutes = require("./routes/places-routes");
 const usersRoutes = require("./routes/users-routes");
-const DB_URI = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@learning.ii4nwxp.mongodb.net/?retryWrites=true&w=majority`;
+const DB_URI = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.y8xss1e.mongodb.net/?appName=Cluster0`;
 
 const app = express();
 
@@ -59,6 +59,7 @@ mongoose
     const PORT = process.env.port || 8080;
     app.listen(PORT);
   })
-  .catch(() => {
+  .catch((err) => {
+    console.log(err)
     console.log("Database connection failed.");
   });
