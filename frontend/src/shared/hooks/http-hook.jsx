@@ -30,8 +30,13 @@ export const useHttpClient = () => {
         setIsLoading(false);
         return data;
       } catch (error) {
+        // Ignore aborted fetches (React 18 StrictMode causes double-effect and abort on unmount)
+        if (error.name === "AbortError") {
+          setIsLoading(false);
+          return;
+        }
         setIsLoading(false);
-        setError(error.message);
+        setError(error.message || "Something went wrong, please try again.");
         throw error;
       }
     },

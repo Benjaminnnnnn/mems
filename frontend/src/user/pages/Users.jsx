@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ErrorModal from "../../shared/components/UIElements/ErrorModal";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 import { useHttpClient } from "../../shared/hooks/http-hook";
@@ -32,7 +32,6 @@ export default function Users() {
         </div>
       )}
       {!isLoading && loadedUsers && <UsersList items={loadedUsers}></UsersList>}
-      ;
     </>
   );
 }

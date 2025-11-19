@@ -12,7 +12,7 @@ export default function NavLinks(props) {
     <ul className="nav-links">
       <li>
         <NavLink to="/" exact>
-          All User
+          Users
         </NavLink>
       </li>
       {auth.isLoggedIn && (

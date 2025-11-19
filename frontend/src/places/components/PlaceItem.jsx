@@ -8,12 +8,15 @@ import Map from "../../shared/components/UIElements/Map";
 import Modal from "../../shared/components/UIElements/Modal";
 import { AuthContext } from "../../shared/context/auth-context";
 import { useHttpClient } from "../../shared/hooks/http-hook";
+import { API_URL, ASSET_URL } from "../../shared/util/env";
 import "./PlaceItem.css";
 
 export default function PlaceItem(props) {
   const auth = useContext(AuthContext);
   const { id, image, title, description, address, creator, location } =
     props.place;
+  const imageUrl =
+    image && image.startsWith("http") ? image : `${ASSET_URL}/${image}`;
 
   const [showMap, setShowMap] = useState(false);
   const [showConfirmDelete, setShowConfirmDelete] = useState(false);
@@ -39,7 +42,7 @@ export default function PlaceItem(props) {
     setShowConfirmDelete(false);
     try {
       await sendRequest(
-        `${process.env.REACT_APP_BACKEND_URL}/places/${id}`,
+        `${API_URL}/places/${id}`,
         "DELETE",
         null,
         {
@@ -94,10 +97,7 @@ export default function PlaceItem(props) {
         <Card className="place-item__content">
           {isLoading && <LoadingSpinner asOverlay></LoadingSpinner>}
           <section className="place-item__image">
-            <img
-              src={`${process.env.REACT_APP_ASSET_URL}/${image}`}
-              alt={title}
-            />
+            <img src={imageUrl} alt={title} />
           </section>
           <section className="place-item__info">
             <h2>{title}</h2>

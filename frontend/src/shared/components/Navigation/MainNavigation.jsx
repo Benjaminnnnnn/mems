@@ -31,6 +31,8 @@ export default function MainNavigation() {
         <button
           className="main-navigation__menu-btn"
           onClick={openDrawerHandler}
+          type="button"
+          aria-label="Open navigation"
         >
           <span></span>
           <span></span>
